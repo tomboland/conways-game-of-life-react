@@ -1,0 +1,8 @@
+.conways-game-of-life {
+  display: flex;
+  flex-direction: row;
+}
+
+.conways-game-of-life-info {
+  margin-left: 20px;
+}

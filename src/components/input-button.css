@@ -1,0 +1,14 @@
+.input-button {
+    background: #fff;
+    border: 2px solid #000;
+    float: left;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 32px;
+    height: 36px;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    width: 64px;
+  }
