@@ -5,7 +5,7 @@ import ConwaysGameOfLife from "./components/ConwaysGameOfLife";
 
   
   ReactDOM.render(
-    <ConwaysGameOfLife gridSizeX={64} gridSizeY={24} />,
+    <ConwaysGameOfLife gridSizeX={24} gridSizeY={16} />,
     document.getElementById('root')
   );
   
