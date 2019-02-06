@@ -1,5 +1,5 @@
-.square {
-  background: #fff;
+.square-on {
+  background: green;
   border: 1px solid #999;
   float: left;
   font-size: 10px;
@@ -11,8 +11,26 @@
   padding: 0;
   text-align: center;
   width: 16px;
+  animation-name: square-on-ani;
+  animation-duration: 0.5s;
 }
 
+.square-off {
+  background: white;
+  border: 1px solid #999;
+  float: left;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 14px;
+  height: 16px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 16px;
+  animation-name: square-off-ani;
+  animation-duration: 0.5s;
+}
 
 .square:focus {
   outline: none;
@@ -20,4 +38,14 @@
 
 .kbd-navigation .square:focus {
   background: #ddd;
+}
+
+@keyframes square-on-ani {
+  from {background-color: white;}
+  to {background-color: green;}
+}
+
+@keyframes square-off-ani {
+  from {background-color: green;}
+  to {background-color: white;}
 }

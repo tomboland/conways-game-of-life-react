@@ -8,22 +8,22 @@ export interface IBoardProps {
 
 const Board: React.FC<IBoardProps> = (props) => {
     const grid =
-        props.squares.map((yval, yindex) => {
-            return renderGridRow(props.squares, props.squareClickHandler, yindex)
+        props.squares.map((xval, xindex) => {
+            return renderGridColumn(props.squares, props.squareClickHandler, xindex)
         })
     return <div> {grid} </div>
 }
 
 
-const renderGridRow = (squares, clickHandler, yindex) => {
+const renderGridColumn = (squares, clickHandler, xindex) => {
     const row =
-        squares[yindex].map((xval, xindex) => {
+        squares[xindex].map((yval, yindex) => {
             return renderSquare({
-                content: squares[yindex][xindex] ? "X" : "",
-                handleClick: () => clickHandler(yindex, xindex), 
+                content: squares[xindex][yindex],
+                handleClick: () => clickHandler(xindex, yindex), 
                 key: `${xindex}_${yindex}`});
         })
-    return <div className="board-row" key={`${yindex}`}>{row}</div>
+    return <div className="board-row" key={`${xindex}`}>{row}</div>
 }
 
 export default Board;

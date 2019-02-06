@@ -16,8 +16,8 @@ export const renderSquare: React.FC<ISquareProps> = (props) => {
 }
 
 const Square: React.FC<ISquareProps> = (props) => (
-    <button className="square" onClick={props.handleClick} key={props.key}>
-        {props.content}
+    <button className={props.content ? "square-on" : "square-off"}
+        onClick={props.handleClick} key={props.key}>
     </button>
 )
  
