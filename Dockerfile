@@ -9,10 +9,8 @@ RUN npm install
 COPY src /usr/src/app/src
 
 RUN npm run build
-
+RUN npm install -g serve
 RUN npm prune --production
 
-ENV HOST "0.0.0.0"
-ENV PORT "8080"
 EXPOSE 8080
-CMD [ "npm", "run", "start" ]
+CMD [ "serve", "--listen" , "tcp://0.0.0.0:8080", "-s", "build" ]
