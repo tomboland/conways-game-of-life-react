@@ -3,7 +3,10 @@ FROM node:8
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-COPY . /usr/src/app/
+COPY src /usr/src/app/src
+COPY static /usr/src/app/static
+COPY tsconfig.json /usr/src/app
+
 RUN npm install
 
 RUN npm run build
