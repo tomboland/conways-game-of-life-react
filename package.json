@@ -1,7 +1,7 @@
 {
   "name": "feetfinding",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@types/jest": "^24.0.0",
     "@types/node": "^10.12.21",
