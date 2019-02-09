@@ -50,6 +50,12 @@ class ConwaysGameOfLife extends React.Component<IConwaysGameOfLifeProps, IConway
     render() {
       return (
         <div className="conways-game-of-life">
+          <header>
+            <h1>Conways Game of Life</h1>
+          <a href={"https://github.com/tomboland/conways-game-of-life-react"}>
+            Source Code on Github.com
+          </a>
+          </header>
           <div className="game-board">
             <Board squares={this.state.squares} squareClickHandler={this.gridUpdateHandler} />
           </div>
