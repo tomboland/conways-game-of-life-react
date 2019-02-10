@@ -1,11 +1,13 @@
 import { gameOfLifeTransform, populatedNeighbours } from '../components/ConwaysGameOfLife';
 
 
-test('should look like a horizontal bar', () => {
+test('vertical bar should turn in to horizontal bar, and back again', () => {
     const testGrid = [[false, true, false],[false, true, false],[false, true, false]]
     const expectedTestGrid = [[false, false, false],[true, true, true],[false, false, false]]
-    const result = gameOfLifeTransform(testGrid)
+    let result = gameOfLifeTransform(testGrid)
     expect(result).toEqual(expectedTestGrid);
+    result = gameOfLifeTransform(expectedTestGrid)
+    expect(result).toEqual(testGrid);
 });
 
 
