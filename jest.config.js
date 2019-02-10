@@ -1,4 +1,7 @@
 module.exports = {
+		"collectCoverage": true,
+		"coverageDirectory": "coverage",
+		"coverageReporters": ["json", "lcov", "html"],
 	  "roots": [
 		      "<rootDir>/src"
 		    ],
