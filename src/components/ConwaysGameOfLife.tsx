@@ -13,6 +13,22 @@ export interface IConwaysGameOfLifeState {
     squares: any[][]
 }
 
+
+const header = () => {
+    return ( 
+      <div className='row'>  
+        <div className='column'>
+          <h1>Conways Game of Life</h1>
+        </div>
+        <div className='column'>
+          <a href={"https://github.com/tomboland/conways-game-of-life-react"}>
+            Source Code on Github.com
+          </a>
+        </div>
+      </div>
+    )
+}
+
 class ConwaysGameOfLife extends React.Component<IConwaysGameOfLifeProps, IConwaysGameOfLifeState> {
     constructor(props) {
         super(props);
@@ -49,29 +65,34 @@ class ConwaysGameOfLife extends React.Component<IConwaysGameOfLifeProps, IConway
     
     render() {
       return (
-        <div className="conways-game-of-life">
-          <header>
-            <h1>Conways Game of Life</h1>
-          <a href={"https://github.com/tomboland/conways-game-of-life-react"}>
-            Source Code on Github.com
-          </a>
-          </header>
-          <div className="game-board">
-            <Board squares={this.state.squares} squareClickHandler={this.gridUpdateHandler} />
+        <div>
+          {header()}  
+          <div className="row">
+              <Board squares={this.state.squares} squareClickHandler={this.gridUpdateHandler} />
           </div>
-          <div className="conways-game-of-life-info">
-            <div>{/* status */}</div>
-            <ol>{/* TODO */}</ol>
-          </div>
-          <div className="input-button">
-            <InputButton
-                content={this.state.running ? "STOP" : "GO!"}
-                handleClick={this.toggleRunningState()}/>
-          </div>
-          <div className="input-button">
-            <InputButton
-                content={"NEXT"}
-                handleClick={this.gameOfLifeTurn}/>
+          <div className="row">
+            <div className="column">
+              <div className="conways-game-of-life-info">
+                <div className="column">
+                  <div>{/* status */}</div>
+                <div>{/* TODO */}</div>
+              </div>
+            </div>
+            <div className="column">
+              <div className="input-button">
+                <InputButton
+                    content={this.state.running ? "STOP" : "GO!"}
+                    handleClick={this.toggleRunningState()}/>
+              </div>
+            </div>
+            <div className="column">
+              <div className="input-button">
+                <InputButton
+                    content={"NEXT"}
+                    handleClick={this.gameOfLifeTurn}/>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       );
