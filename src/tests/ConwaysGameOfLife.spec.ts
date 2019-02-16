@@ -1,12 +1,12 @@
-import { gameOfLifeTransform, populatedNeighbours } from '../components/ConwaysGameOfLife';
+import { transformBoard, populatedNeighbours } from '../reducers';
 
 
 test('vertical bar should turn in to horizontal bar, and back again', () => {
     const testGrid = [[false, true, false],[false, true, false],[false, true, false]]
     const expectedTestGrid = [[false, false, false],[true, true, true],[false, false, false]]
-    let result = gameOfLifeTransform(testGrid)
+    let result = transformBoard(testGrid)
     expect(result).toEqual(expectedTestGrid);
-    result = gameOfLifeTransform(expectedTestGrid)
+    result = transformBoard(expectedTestGrid)
     expect(result).toEqual(testGrid);
 });
 
